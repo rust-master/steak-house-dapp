@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    to right,
+    rgba(16, 15, 21, 1),
+    rgba(40, 43, 70, 1),
+    rgba(77, 33, 51, 1)
+  );
+}
+p {
+  font-family: Roboto !important;
+  color: #000000;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.logoimg {
+  width: 200px;
+  margin: auto;
+  display: flex;
+}
+.firstheading {
+  color: white;
+  font-family: Roboto;
+  font-weight: bold;
+}
+.bgcolor {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    to left,
+    rgba(172, 37, 37, 1),
+    rgba(32, 34, 55, 1)
+  );
+}
+.dataRow {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 5px 0;
+  color: white;
+  font-size: 18px;
+  line-height: 35px;
+  font-family: Roboto;
+  font-weight: 500;
+}
+.ant-input-affix-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  line-height: 1.5715;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-flex;
+}
+.ant-input-affix-wrapper {
+  height: 55px;
+  margin: 0;
+  position: relative;
+  border: none;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  border-radius: 15px;
+  background: #ffc806;
+}
+.ant-input {
+  border: none !important;
+  color: black;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+
+  text-align: center;
+  padding-left: 25px;
+  width: 100%;
+  margin: auto;
+}
+
+.ant-input-prefix,
+.ant-input-suffix {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+.ant-input-suffix {
+  margin-left: 4px;
+}
+
+.ant-input-suffix {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.suffix {
+  padding-right: 10px;
+}
+.buyButton {
+  border: 2px solid #ffc806;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 42px;
+  padding: 5px 0;
+  text-align: center;
+  display: block;
+  width: 100%;
+  background: transparent;
+  margin-top: 17px;
+}
+.buyButton:hover {
+  border: 2px solid #fff;
+}
+.socialMedias {
+  display: flex;
+  justify-content: center;
+}
+.solbutton {
+  height: 50px;
+  text-decoration: none !important;
+  border-radius: 100px;
+  position: relative;
+  border: 2px solid rgb(56, 104, 194);
+  color: white;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
+  background: #000000;
+
+  display: block;
+}
+.solbutton:hover {
+  border: 2px solid #fff;
+}
+.actionWrapper {
+  margin-top: 30px;
+  border-top: 1px dashed #ffc806;
+  padding-top: 20px;
+}
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actionButtons button {
+  width: calc(50% - 10px);
+  text-align: center;
+  border: 2px solid #ffc806;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  padding: 8px 0;
+  background: transparent;
+  border-radius: 15px;
+}
+.actionButtons button:hover {
+  border: 2px solid #fff;
+}
+.rightdiv {
+  padding: 1.7rem 1.2rem 0.7rem 1.5rem;
+}
+.righttext {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Roboto;
+}
+.text1 {
+  color: white !important;
+  font-weight: 500;
+  font-size: 19px;
+  font-family: Roboto;
+}
+.refWrapper {
+  display: flex;
+
+  align-items: center;
+}
+.copyButton {
+  border: 2px solid #ffc806;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 5px 20px;
+  background: transparent;
+  color: #fff;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.copyButton:hover {
+  cursor: pointer;
+}
+input::placeholder {
+  color: black;
+}
+a {
+  text-decoration: none !important;
+}
+input:focus {
+  outline: none !important;
+}
+.copyButton:hover {
+  border: 2px solid #fff;
+}
+input {
+  height: 34px;
+  width: 100px;
+  text-align: center;
+  font-size: 26px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.margin1 {
+  margin: 3.5rem 0rem 1rem !important;
+}
+.nut {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.buttoncreator {
+  background-color: unset !important;
+  border: none !important;
+  padding: unset !important;
+  margin: unset !important;
+}
+.popupcls {
+  width: 100%;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 68, 86, 1),
+    rgba(255, 74, 46, 1)
+  );
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  border: 1px solid #000000;
+}
+.modal-content {
+  background-color: #fff4f4;
+  padding: 1rem 4rem 0rem 4rem !important;
+}
+.modal-title {
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  font-family: Roboto;
+}
+.modal-header {
+  border: none !important;
+}
+.modal-footer {
+  border: none !important;
+}
+.bgnav {
+  border-radius: 100px;
+  padding: 10px 40px;
+}
+.topbutton {
+  background-color: rgba(255, 68, 86, 1) !important;
+  border: 2px solid black !important;
+  font-weight: bold !important;
+  font-family: Roboto !important;
+}
+.mob {
+  display: none !important;
+}
+.des {
+  display: block !important;
+}
+@media (min-width: 576px) {
+  .modal-content {
+    background-color: #fff4f4;
+    padding: 1rem 4rem 0rem 4rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mob {
+    display: block !important;
+  }
+  .des {
+    display: none !important;
+  }
+  #ma {
+    display: none;
+  }
+  .hide {
+    display: none !important;
+  }
+  .margin1 {
+    margin-top: 2rem !important;
+  }
+  .paragraph {
+    color: white;
+    font-size: 10px;
+  }
+}
