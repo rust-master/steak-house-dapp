@@ -15,6 +15,7 @@ contract SteakHouse {
     mapping(address => uint256) public claimedEggs;
     mapping(address => uint256) public lastHatch;
     mapping(address => address) public referrals;
+
     uint256 public marketEggs;
 
     constructor() public {

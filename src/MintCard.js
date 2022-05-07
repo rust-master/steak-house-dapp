@@ -15,6 +15,8 @@ const MintCard = () => {
   const [walletBalance, setWalletBalance] = useState('');
   const [contractBalance, setContractBalance] = useState('');
 
+  const [networkId, setNetworkId] = useState(0);
+
   let web3 = new Web3(window?.web3?.currentProvider);
   if (window.ethereum) {
     web3 = new Web3(window.ethereum);
@@ -30,10 +32,10 @@ const MintCard = () => {
     try {
       await activate(injected);
 
-      //   if (id !== parseInt(chainId)) {
-      //     alert("Please change your network to Mainnet");
-      //     return false;
-      //   }
+      if (networkId !== 97) {
+        alert("Please change your network to Mainnet");
+        return false;
+      }
 
       const accounts = await web3.eth.getAccounts();
       //   if (isMetamask) {
@@ -47,35 +49,65 @@ const MintCard = () => {
     }
   }
 
-  useEffect(() => {
-    if (isMobile && !active && window.ethereum) {
-      connect();
+  useEffect(async () => {
+    const netId = await web3.eth.net.getId();
+    setNetworkId(netId);
+
+    if (netId != 97) {
+      alert("Please change your network to BSC Testnet");
+    } else {
+      const accounts = await web3.eth.getAccounts();
+      const deployedNetwork = contract.networks[97];
+
+      console.log(deployedNetwork.address);
+
+      const userBalance = web3.utils.fromWei(
+        await web3.eth.getBalance(accounts[0]),
+        "ether"
+      );
+
+      const contractBlnc = web3.utils.fromWei(
+        await web3.eth.getBalance(deployedNetwork.address),
+        "ether"
+      );
+
+      setWalletBalance(userBalance);
+      setContractBalance(contractBlnc);
     }
 
+    // console.log(netId);
 
-  }, [window.ethereum]);
+  }, [true]);
 
-  useEffect(async () => {
-    const accounts = await web3.eth.getAccounts();
-    const netId = await web3.eth.net.getId();
-    const deployedNetwork = contract.networks[netId];
+  // useEffect(() => {
+  //   if (isMobile && !active && window.ethereum) {
+  //     connect();
+  //   }
 
-    console.log(deployedNetwork.address);
 
-    const userBalance = web3.utils.fromWei(
-      await web3.eth.getBalance(accounts[0]),
-      "ether"
-    );
+  // }, [window.ethereum]);
 
-    const contractBlnc = web3.utils.fromWei(
-      await web3.eth.getBalance(deployedNetwork.address),
-      "ether"
-    );
+  // useEffect(async () => {
+  //   const accounts = await web3.eth.getAccounts();
+  //   const netId = await web3.eth.net.getId();
+  //   const deployedNetwork = contract.networks[netId];
 
-    setWalletBalance(userBalance);
-    setContractBalance(contractBlnc);
+  //   console.log(deployedNetwork.address);
 
-  }, [window.ethereum]);
+  //   const userBalance = web3.utils.fromWei(
+  //     await web3.eth.getBalance(accounts[0]),
+  //     "ether"
+  //   );
+
+  //   const contractBlnc = web3.utils.fromWei(
+  //     await web3.eth.getBalance(deployedNetwork.address),
+  //     "ether"
+  //   );
+
+  //   setWalletBalance(userBalance);
+  //   setContractBalance(contractBlnc);
+
+  // }, [window.ethereum]);
 
   // const showAccount = document.querySelector('.showAccount');
   function register() {

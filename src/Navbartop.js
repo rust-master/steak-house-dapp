@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Container, NavDropdown, NavItem, Nav } from "react-bootstrap";
 import Web3 from "web3";
 import { useWeb3React } from "@web3-react/core";
@@ -12,6 +12,8 @@ import four from "./Images/4.png";
 import meta from "./Images/metamask.png";
 import con from "./Images/conn.png";
 const Navbartop = () => {
+  const [networkId, setNetworkId] = useState(0);
+
   let web3 = new Web3(window?.web3?.currentProvider);
   if (window.ethereum) {
     web3 = new Web3(window.ethereum);
@@ -27,10 +29,10 @@ const Navbartop = () => {
     try {
       await activate(injected);
 
-      //   if (id !== parseInt(chainId)) {
-      //     alert("Please change your network to Mainnet");
-      //     return false;
-      //   }
+      if (networkId !== 97) {
+        alert("Please change your network to Mainnet");
+        return false;
+      }
 
       const accounts = await web3.eth.getAccounts();
       //   if (isMetamask) {
@@ -43,6 +45,22 @@ const Navbartop = () => {
       return "failed";
     }
   }
+
+
+
+
+  useEffect(async () => {
+    const netId = await web3.eth.net.getId();
+    setNetworkId(netId);
+
+    if (netId != 97) {
+      alert("Please change your network to BSC Testnet");
+    }
+
+    console.log(netId);
+
+  }, [true]);
+
   return (
     <div>
       <Navbar

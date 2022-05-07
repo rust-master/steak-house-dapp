@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import MintCard from "./MintCard";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +10,9 @@ function getLibrary(provider) {
   return new Web3(provider);
 }
 function App() {
+
+
+
   return (
     <>
       <Web3ReactProvider getLibrary={getLibrary}>
