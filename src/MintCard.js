@@ -55,27 +55,9 @@ const MintCard = () => {
 
     if (netId != 97) {
       alert("Please change your network to BSC Testnet");
-    } else {
-      const accounts = await web3.eth.getAccounts();
-      const deployedNetwork = contract.networks[97];
-
-      console.log(deployedNetwork.address);
-
-      const userBalance = web3.utils.fromWei(
-        await web3.eth.getBalance(accounts[0]),
-        "ether"
-      );
-
-      const contractBlnc = web3.utils.fromWei(
-        await web3.eth.getBalance(deployedNetwork.address),
-        "ether"
-      );
-
-      setWalletBalance(userBalance);
-      setContractBalance(contractBlnc);
     }
 
-    // console.log(netId);
+    console.log(netId);
 
   }, [true]);
 
