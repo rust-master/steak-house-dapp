@@ -13,6 +13,7 @@ import meta from "./Images/metamask.png";
 import con from "./Images/conn.png";
 const Navbartop = () => {
   const [networkId, setNetworkId] = useState(0);
+  const [netError, setNetError] = useState("");
 
   let web3 = new Web3(window?.web3?.currentProvider);
   if (window.ethereum) {
@@ -27,17 +28,15 @@ const Navbartop = () => {
     useWeb3React();
   async function connect() {
     try {
-      await activate(injected);
+
 
       if (networkId !== 97) {
-        alert("Please change your network to Mainnet");
+        alert("Please change your network to BSC Testnet and reload website");
         return false;
+      } else {
+        await activate(injected);
+        window.location.reload();
       }
-
-      const accounts = await web3.eth.getAccounts();
-      //   if (isMetamask) {
-      //   }
-      // setMessage("successful");
 
       return "success";
     } catch (err) {
@@ -54,7 +53,8 @@ const Navbartop = () => {
     setNetworkId(netId);
 
     if (netId != 97) {
-      alert("Please change your network to BSC Testnet");
+      alert("Please change your network to BSC Testnet and reload website");
+      setNetError("Please change your network to BSC Testnet and reload website");
     }
 
     console.log(netId);
@@ -78,7 +78,7 @@ const Navbartop = () => {
 
           <Nav className="m-auto ">
             <Nav.Link href="#features" id="ma">
-              {/* <img src={title} className="test" /> */}
+              <h6>{netError}</h6>
             </Nav.Link>
           </Nav>
           <Nav>

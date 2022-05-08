@@ -54,7 +54,7 @@ const MintCard = () => {
     setNetworkId(netId);
 
     if (netId != 97) {
-      alert("Please change your network to BSC Testnet");
+      // alert("Please change your network to BSC Testnet");
     }
 
     console.log(netId);
