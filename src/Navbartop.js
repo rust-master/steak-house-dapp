@@ -28,8 +28,6 @@ const Navbartop = () => {
     useWeb3React();
   async function connect() {
     try {
-
-
       if (networkId !== 97) {
         alert("Please change your network to BSC Testnet and reload website");
         return false;
@@ -45,20 +43,18 @@ const Navbartop = () => {
     }
   }
 
-
-
-
   useEffect(async () => {
     const netId = await web3.eth.net.getId();
     setNetworkId(netId);
 
     if (netId != 97) {
       alert("Please change your network to BSC Testnet and reload website");
-      setNetError("Please change your network to BSC Testnet and reload website");
+      setNetError(
+        "Please change your network to BSC Testnet and reload website"
+      );
     }
 
     console.log(netId);
-
   }, [true]);
 
   return (

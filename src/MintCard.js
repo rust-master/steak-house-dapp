@@ -10,10 +10,9 @@ import meta from "./Images/metamask.png";
 import contract from "./build/contracts/SteakHouse.json";
 
 const MintCard = () => {
-
-  const [valueSteak, setValueSteak] = useState('');
-  const [walletBalance, setWalletBalance] = useState('');
-  const [contractBalance, setContractBalance] = useState('');
+  const [valueSteak, setValueSteak] = useState("");
+  const [walletBalance, setWalletBalance] = useState("");
+  const [contractBalance, setContractBalance] = useState("");
 
   const [networkId, setNetworkId] = useState(0);
 
@@ -58,14 +57,12 @@ const MintCard = () => {
     }
 
     console.log(netId);
-
   }, [true]);
 
   // useEffect(() => {
   //   if (isMobile && !active && window.ethereum) {
   //     connect();
   //   }
-
 
   // }, [window.ethereum]);
 
@@ -124,8 +121,6 @@ const MintCard = () => {
       usdBnbBasis: valueSteak,
       value: web3.utils.toWei(valueSteak, "ether"),
     });
-
-
   }
 
   async function eatSteak() {
@@ -150,10 +145,8 @@ const MintCard = () => {
     console.log(valueSteak);
 
     await instance.methods.eatSteak().send({
-      from: accounts[0]
+      from: accounts[0],
     });
-
-
   }
 
   async function regrillSteak() {
@@ -178,10 +171,8 @@ const MintCard = () => {
     console.log(valueSteak);
 
     await instance.methods.regrillSteak(accounts[0]).send({
-      from: accounts[0]
+      from: accounts[0],
     });
-
-
   }
 
   return (
@@ -224,14 +215,19 @@ const MintCard = () => {
                   <div class="value">0 Steak</div>
                 </div>
                 <span class="ant-input-affix-wrapper antInput">
-                  <input type="text" placeholder="0" class="ant-input"
-                    onChange={e => setValueSteak(e.target.value)}
+                  <input
+                    type="text"
+                    placeholder="0"
+                    class="ant-input"
+                    onChange={(e) => setValueSteak(e.target.value)}
                   />{" "}
                   <span class="ant-input-suffix">
                     <span class="suffix">BNB</span>
                   </span>
                 </span>
-                <button class="buyButton" onClick={grillSteak}>GRILL STEAK</button>
+                <button class="buyButton" onClick={grillSteak}>
+                  GRILL STEAK
+                </button>
 
                 <div class="actionWrapper">
                   <div class="dataRow">
@@ -241,7 +237,8 @@ const MintCard = () => {
                     </div>
                   </div>{" "}
                   <div class="actionButtons">
-                    <button onClick={regrillSteak}>RE-GRILL STEAK</button> <button onClick={eatSteak}>EAT STEAK</button>
+                    <button onClick={regrillSteak}>RE-GRILL STEAK</button>{" "}
+                    <button onClick={eatSteak}>EAT STEAK</button>
                   </div>
                   <br />
                 </div>
